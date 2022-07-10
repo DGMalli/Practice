@@ -1,0 +1,9 @@
+---
+- name: to check disk space
+  hosts: all
+  tasks:
+    - name: disk_space
+      command: df -h . 
+      register: disk_size
+    - debug: 
+           var: disk_size.stdout_lines

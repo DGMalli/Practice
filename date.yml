@@ -1,0 +1,9 @@
+---
+- name: to check date
+  hosts: all
+  tasks:
+    - name: date_check
+      command: date 
+      register: date_host
+    - debug: 
+           var: date_host.stdout_lines
